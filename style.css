@@ -76,7 +76,7 @@ body {
 }
 
 .intro {
-  background-image: url("images/afternoonstreet.jpg");
+  background-image: url("images/toronto.jpg");
 }
 
 .afternoon {
@@ -92,7 +92,7 @@ body {
 }
 
 .morning {
-  background-image: url("images/afternoonstreet.jpg");
+  background-image: url("images/morning.jpg");
 }
 
 h1,
