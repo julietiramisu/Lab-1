@@ -4,24 +4,79 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
-  color: #444;
+  color: #2d2d2d;
   background: #faf7f4;
+  line-height: 1.6;
 }
 
 .parallax {
-  height: 100vh;
-
+  position: relative;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  padding: 40px 20px;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
-
   background-attachment: fixed;
+  overflow: hidden;
+}
+
+.parallax::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 18, 18, 0.18);
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  background: rgba(248, 236, 148, 0.8);
+  padding: 40px 32px;
+  border-radius: 18px;
+  backdrop-filter: blur(6px);
+  max-width: 560px;
+  text-align: center;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.08);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.content {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 24px;
+  background: #fad4e6;
+}
+
+.content p {
+  max-width: 760px;
+}
+
+.final-block {
+  background: #f3cbd5;
+}
+
+.intro {
+  background-image: url("images/afternoonstreet.jpg");
 }
 
 .afternoon {
@@ -36,39 +91,39 @@ body {
   background-image: url("images/bed.jpg");
 }
 
-.content {
-  min-height: 5vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-
-  padding: 60px;
-  background: #fad4e6;
-}
-
-.card {
-  background: rgba(240, 235, 141, 0.75);
-
-  padding: 40px;
-
-  border-radius: 16px;
-
-  backdrop-filter: blur(6px);
-
-  max-width: 500px;
-
-  text-align: center;
+.morning {
+  background-image: url("images/afternoonstreet.jpg");
 }
 
 h1,
 h2 {
   margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
 }
 
 p {
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 700px) {
+  .card {
+    padding: 28px 22px;
+  }
+
+  .content {
+    padding: 60px 18px;
+  }
+
+  .parallax {
+    background-attachment: scroll;
+  }
 }
